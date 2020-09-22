@@ -6,23 +6,23 @@ public class FindPair {
         int[] arrayA = { 2,4 ,5, 8, 10, 19};
         int x = 15;
 
-        findPair(arrayA, x);
+        findPair2(arrayA, x);
 
         x = 16;
-        findPair(arrayA, x);
+        findPair2(arrayA, x);
 
         x = 25;
-        findPair(arrayA, x);
+        findPair2(arrayA, x);
 
 
     }
 
-    public static boolean findPair(int[]arrayA, int x){
+    public static boolean findPair1(int[]array, int x){
 
-        for (int first = 0; first < arrayA.length; first++){
-            for (int second = first; second < arrayA.length; second++){
-                if (arrayA[first] + arrayA[second] == x){
-                    System.out.printf("Found: %d + %d = %d. \n", arrayA[first], arrayA[second], x);
+        for (int first = 0; first < array.length; first++){
+            for (int second = first; second < array.length; second++){
+                if (array[first] + array[second] == x){
+                    System.out.printf("Found: %d + %d = %d. \n", array[first], array[second], x);
                     return true;
                 }
             }
@@ -31,5 +31,21 @@ public class FindPair {
         System.out.printf("Not Found: Sum to %d.", x);
         return false;
     }
+
+    public static boolean findPair2(int[]array, int x){
+
+        for (int first : array){
+            for (int second : array){
+                if (first + second == x){
+                    System.out.printf("Found: %d + %d = %d. \n", first, second, x);
+                    return true;
+                }
+            }
+        }
+
+        System.out.printf("Not Found: Sum to %d.", x);
+        return false;
+    }
+
 
 }
