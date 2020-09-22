@@ -31,8 +31,7 @@ public class FindPair {
                 return true;
             } else if (sum < x){
                 left++;
-            } else if (sum > x){
-
+            } else{
                 right--;
             }
         }
