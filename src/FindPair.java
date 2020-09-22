@@ -6,15 +6,39 @@ public class FindPair {
         int[] arrayA = { 2,4 ,5, 8, 10, 19};
         int x = 15;
 
-        findPair2(arrayA, x);
+        findPair3(arrayA, x);
 
         x = 16;
-        findPair2(arrayA, x);
+        findPair3(arrayA, x);
 
         x = 25;
-        findPair2(arrayA, x);
+        findPair3(arrayA, x);
 
 
+    }
+    public static boolean findPair3(int[]array, int x){
+
+
+        int left = 0;
+        int right = array.length - 1;
+
+        while(left <= right){
+            int sum = array[left] + array[right];
+
+
+            if (sum == x){
+                System.out.printf("Found: %d + %d = %d. \n", array[left], array[right], x);
+                return true;
+            } else if (sum < x){
+                left++;
+            } else if (sum > x){
+
+                right--;
+            }
+        }
+
+        System.out.printf("Not Found: Sum to %d.", x);
+        return false;
     }
 
     public static boolean findPair1(int[]array, int x){
