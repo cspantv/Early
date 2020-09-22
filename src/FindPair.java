@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class FindPair {
 
 
@@ -15,7 +17,22 @@ public class FindPair {
         findPair3(arrayA, x);
 
 
+        Scanner console = new Scanner(System.in);
+
+        x = getX(console);
+        while(x != -1){
+            findPair3(arrayA, x);
+            x = getX(console);
+        }
     }
+
+    public static int getX(Scanner console){
+
+        System.out.printf("\n\nPlease give an input of X [-1 to Exit]: ");
+        return console.nextInt();
+
+    }
+
     public static boolean findPair3(int[]array, int x){
 
 
@@ -31,12 +48,12 @@ public class FindPair {
                 return true;
             } else if (sum < x){
                 left++;
-            } else{
+            } else { //sum > x
                 right--;
             }
         }
 
-        System.out.printf("Not Found: Sum to %d.", x);
+        System.out.printf("Not Found: Sum to %d.\n", x);
         return false;
     }
 
